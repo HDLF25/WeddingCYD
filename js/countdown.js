@@ -17,7 +17,11 @@ var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
 // Muestra el resultado en el elemento con id="countdown"
-document.getElementById("countdown").innerHTML = "Quedan " + days + " días - " + hours + " hr - " + minutes + " min - " + seconds + " seg. ";
+//document.getElementById("countdown").innerHTML = "Quedan " + days + " días, " + hours + " hrs, " + minutes + " mins y " + seconds + " segs. ";
+document.getElementById("countdown_days").innerHTML = days;
+document.getElementById("countdown_hours").innerHTML = hours;
+document.getElementById("countdown_minutes").innerHTML = minutes;
+document.getElementById("countdown_seconds").innerHTML = seconds;
 
 // Si la cuenta regresiva ha terminado, muestra un mensaje
 if (timeRemaining < 0) {
