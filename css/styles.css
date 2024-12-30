@@ -1,0 +1,48 @@
+body {
+    padding-top: 55px;
+    background-color: #ffffff;
+    color: #2c2c2c;
+    font-family: "Montserrat", sans-serif;
+}
+
+.hero-section {
+    background: url("background-test.png") no-repeat center;
+    background-size: cover;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2c2c2c;
+    padding: 2rem;
+}
+
+.hero-section h1 {
+    font-family: "MS Madi";
+    font-size: 8rem;
+}
+
+.hero-section p {
+    font-family: "Playfair Display";
+    font-size: 2rem;
+}
+
+.countdown {
+    font-size: 2rem;
+    color: #2c2c2c;
+}
+
+img,
+iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 4rem;
+    }
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+}
