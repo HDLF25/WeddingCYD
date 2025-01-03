@@ -1,59 +1,389 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Boda - Camila & David</title>
-    <!-- Bootstrap CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/styles.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Ms+Madi&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- JavaScript -->
-    <script src="./js/countdown.js" defer></script>
-    <script src="./js/bootstrap.bundle.min.js" defer></script>
-</head>
-<body>
-    <!-- Encabezado -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Nuestra Boda</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#detalles">Detalles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#regalos">Regalos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
-                </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Invitación de Boda - Camila & David</title>
+        <script src="./js/countdown.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <link href="./css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Ms+Madi&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <!-- <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ms+Madi&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet" /> -->
+        <style>
+        body {
+            padding-top: 55px;
+            background-color: #ffffff;
+            color: #2c2c2c;
+        }
+        .hero-section {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("PaperBG.jpg") no-repeat;
+            background-size: contain;
+            height: 80rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #2c2c2c;
+        }
+        .hero-section h1 {
+            font-family: "MS Madi";
+            font-size: 8rem;
+        }
+        .hero-section p {
+            font-family: "Playfair Display";
+            font-size: 2rem;
+        }
+        .countdown {
+            font-size: 2rem;
+            color: #2c2c2c;
+        }
+
+        /* Imagen responsiva con bordes redondeados en pantallas grandes */
+        .hero-image {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem; /* Bordes redondeados por defecto */
+        }
+
+        /* Imagen en pantallas pequeñas (sin bordes redondeados) */
+        @media (max-width: 768px) {
+            .hero-image {
+            border-radius: 0; /* Sin bordes redondeados */
+            width: 100%; /* Imagen ocupa todo el ancho */
+            }
+        }
+
+        /* Altura personalizada para la sección de bienvenida */
+        .hero-section {
+            min-height: calc(100vh - 70px); /* Altura ajustada al viewport menos el navbar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 2rem 1rem;
+        }
+
+        /* Imagen responsive */
+        img,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media Queries para pantallas más pequeñas */
+        @media (max-width: 992px) {
+            .hero-section h1 {
+                font-size: 6rem;
+            }
+
+            .hero-section p {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 40rem;
+            }
+
+            .hero-section h1 {
+                font-size: 4rem;
+            }
+
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 30rem;
+                padding: 0 1rem;
+            }
+
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+        <!-- Encabezado -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+            style="font-family: Montserrat">
+            <div class="container">
+                <a class="navbar-brand" href="#">Nuestra Boda</a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#detalles">Detalles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ubicacion">Ubicación</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#regalos">Regalos</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#rsvp">RSVP</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- Contenido principal -->
-    <section class="hero-section">
-        <div class="container text-center">
-            <h1>¡Nos Casamos!</h1>
-            <p>Camila & David</p>
-            <div class="countdown">
-                <p id="countdown_days"></p>
-                <p id="countdown_hours"></p>
-                <p id="countdown_minutes"></p>
-                <p id="countdown_seconds"></p>
+        </nav>
+        <!-- Sección de bienvenida -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row d-flex flex-column-reverse flex-md-column">
+                    <div>
+                        <h1>¡Nos Casamos!</h1>
+                        <p>Camila & David</p>
+                        <!-- <p id="countdown" class="countdown">...</p> -->
+                        <div class="row">
+                            <p class="countdown">Quedan</p>
+                            <p id="countdown_days" class="col-3"
+                                style="font-size: 3rem;"></p>
+                            <p id="countdown_hours" class="countdown col-3"
+                                style="font-size: 3rem;"></p>
+                            <p id="countdown_minutes" class="countdown col-3"
+                                style="font-size: 3rem;"></p>
+                            <p id="countdown_seconds" class="countdown col-3"
+                                style="font-size: 3rem;"></p>
+                            <p class="countdown col-3">días</p>
+                            <p class="countdown col-3">horas</p>
+                            <p class="countdown col-3">mins</p>
+                            <p class="countdown col-3">segs</p>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center my-3">
+                        <img src="wedding-test.png" alt="Couple photo"
+                            class="img-fluid rounded">
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Más secciones aquí -->
-    <footer class="bg-dark text-light text-center py-3">
-        <div class="container">
-            <p>&copy; 2025 Camila & David</p>
-        </div>
-    </footer>
-</body>
+        </section>
+
+        <!-- Sección Detalles del Evento -->
+        <section id="detalles" class="py-5" style="font-family: Montserrat">
+            <div class="container">
+                <div class="row text-center">
+                    <div><img src="icons/wedding.gif" style="width: 7rem;" width="auto" /></div>
+                    <h2>Detalles del Evento</h2>
+                    <p>
+                        El día más esperado de nuestras vidas finalmente ha
+                        llegado,
+                        acompañennos en nuestra boda y sean parte de nuestra
+                        historia.
+                    </p>
+                    <div class="col-md-6">
+                        <div><img src="icons/wedding-planner.gif" style="width: 3rem;" width="auto" /></div>
+                        <h3>Fecha y Hora</h3>
+                        <p>18 de Octubre de 2025, 4:00 PM<br>
+                            <b>Save the Date</b>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div><img src="icons/toast.gif" style="width: 3rem;" width="auto" /></div>
+                        <h3>Lugar</h3>
+                        <p>
+                            Salón de eventos "Villa Jardín"<br />Calle Capitán
+                            Valois Rivarola
+                            250<br />Luque - Paraguay
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección Ubicación -->
+        <section id="ubicacion" class="py-5"
+            style="font-family: Montserrat">
+            <div class="container">
+                <div class="row text-center">
+                    <div><img src="icons/favourite-location.gif" style="width: 7rem;" width="auto" /></div>
+                    <h2>Ubicación del Evento</h2>
+                    <p>
+                        El lugar de nuestra boda es un hermoso salón rodeado de
+                        jardines.
+                    </p>
+                    <div class="col-md-12" style="margin-bottom: 1rem">
+                        <div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5374.809353874561!2d-57.51339763359442!3d-25.26478208803476!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5838a45fef9%3A0x9e0cbef5e49ac8ed!2sVilla%20Jardin!5e0!3m2!1ses-419!2spy!4v1728869604026!5m2!1ses-419!2spy"
+                                width="600" height="450" style="border: 0"
+                                allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-4"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="https://maps.app.goo.gl/AyEHacgVMEXQk9BX6"
+                            class="btn btn-outline-secondary"><i
+                                class="bi bi-geo-alt-fill"></i> Ver en el
+                            Mapa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección Registro de Regalos -->
+        <section id="regalos" class="py-5" style="font-family: Montserrat">
+            <div class="container">
+                <div class="row text-center">
+                    <div><img src="icons/present.gif" style="width: 7rem;" width="auto" /></div>
+                    <h2>Registro de Regalos</h2>
+                    <p>
+                        Gracias por acompañarnos. Si desean hacernos un
+                        obsequio, pueden
+                        ayudarnos en nuestro sueño de formar nuestro hogar con
+                        una
+                        contribución económica que nos permitirá establecer las
+                        bases de
+                        nuestro futuro. <b>¡Todo suma!</b>
+                    </p>
+                    <div class="col-md-12">
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-outline-secondary"
+                                type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseGift"
+                                aria-expanded="false"
+                                aria-controls="collapseGift">
+                                <i class="bi bi-arrow-down"></i> Ver info
+                            </button>
+                        </p>
+                        <div class="collapse container px-4" id="collapseGift">
+                            <div class="row">
+                                <!-- Primera columna -->
+                                <div
+                                    class="col-12 col-md-6 order-md-1 text-center">
+                                    <ul class="list-group">
+                                        <li
+                                            class="list-group-item p-3 border-0">
+                                            <h4><b>Cuentas de
+                                                    David</b><br /></h4>
+                                            <h5><b>Titular:</b> David
+                                                López<br /></h5>
+                                            <h5><b>CI N°:</b> 5118644</h5>
+                                        </li>
+                                        <li
+                                            class="list-group-item p-3 border-0">
+                                            <h5>
+                                                <img src="icons/GNB.svg"
+                                                    width="auto" /> Banco
+                                                GNB<br />
+                                            </h5>
+                                            <h6><b>Cta N°:
+                                                </b>13106001002<br /></h6>
+                                            <h6><b>Alias: </b>5118644</h6>
+                                        </li>
+                                        <li
+                                            class="list-group-item p-3 border-0">
+                                            <h5>
+                                                <img src="icons/UenoBank.svg"
+                                                    width="auto" /> Ueno
+                                                Bank<br />
+                                            </h5>
+                                            <h6><b>Cta N°:
+                                                </b>61923460<br /></h6>
+                                            <h6><b>Alias: </b>0981133948</h6>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Segunda columna -->
+                                <div
+                                    class="col-12 col-md-6 order-md-2 text-center">
+                                    <ul class="list-group">
+                                        <li
+                                            class="list-group-item p-3 border-0">
+                                            <h4><b>Cuentas de
+                                                    Camila</b><br /></h4>
+                                            <h5><b>Titular:</b> Camila
+                                                Galeano<br /></h5>
+                                            <h5><b>CI N°:</b> 5387764</h5>
+                                        </li>
+                                        <li
+                                            class="list-group-item p-3 border-0">
+                                            <h5>
+                                                <img src="icons/Itau.svg"
+                                                    width="auto" /> Banco
+                                                Itaú<br />
+                                            </h5>
+                                            <h6><b>Cta N°:
+                                                </b>25237255<br /></h6>
+                                            <h6><b>Alias: </b>0994727433</h6>
+                                        </li>
+                                        <li
+                                            class="list-group-item p-3 border-0">
+                                            <h5>
+                                                <img src="icons/UenoBank.svg"
+                                                    width="auto" /> Ueno
+                                                Bank<br />
+                                            </h5>
+                                            <h6><b>Cta N°:
+                                                </b>14435757<br /></h6>
+                                            <h6><b>Alias: </b>5387764</h6>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección RSVP -->
+        <section id="rsvp" class="py-5"
+            style="font-family: Montserrat">
+            <div class="container">
+                <div class="row text-center">
+                    <div><img src="icons/form.gif" style="width: 7rem;" width="auto" /></div>
+                    <h2>Confirmación de Asistencia</h2>
+                    <p>Por favor, confirme tu asistencia <br>antes del 30 de Junio.</p>
+                    <div class="col-md-12">
+                        <a
+                            href="https://forms.gle/puqKnNjmiPcLbXSa8"
+                            class="btn btn-outline-success"
+                            style="margin-bottom: 1rem;">
+                            <i class="bi bi-list-check"></i> Completar
+                            formulario</a>
+                    </div>
+                    <p>Consultas:</p>
+                    <div class="col-md-12">
+                        <a
+                            href="https://wa.me/595994727433"
+                            class="btn btn-outline-success">
+                            <i class="bi bi-whatsapp"></i> Camila</a>
+                        <a
+                            href="https://wa.me/595981133948"
+                            class="btn btn-outline-success">
+                            <i class="bi bi-whatsapp"></i> David</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pie de Página -->
+        <footer class="bg-dark text-light text-center py-3">
+            <div class="container">
+                <p>&copy; 2025 Camila & David</p>
+            </div>
+        </footer>
+    </body>
 </html>
