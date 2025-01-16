@@ -1,0 +1,101 @@
+body {
+    padding-top: 0px;
+    background-color: #ffffff;
+    color: #2c2c2c;
+}
+.hero-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("../PaperBG.jpg") no-repeat;
+    background-size: contain;
+    height: 80rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #2c2c2c;
+}
+.hero-section h1 {
+    font-family: "MS Madi";
+    font-size: 8rem;
+}
+.hero-section p {
+    font-family: "Playfair Display";
+    font-size: 2rem;
+}
+.countdown {
+    font-size: 2rem;
+    color: #2c2c2c;
+}
+
+/* Imagen responsiva con bordes redondeados en pantallas grandes */
+.hero-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem; /* Bordes redondeados por defecto */
+}
+
+/* Imagen en pantallas pequeñas (sin bordes redondeados) */
+@media (max-width: 768px) {
+    .hero-image {
+    border-radius: 0; /* Sin bordes redondeados */
+    width: 100%; /* Imagen ocupa todo el ancho */
+    }
+}
+
+/* Altura personalizada para la sección de bienvenida */
+.hero-section {
+    min-height: calc(100vh - 70px); /* Altura ajustada al viewport menos el navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+}
+
+/* Imagen responsive */
+img,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 6rem;
+    }
+
+    .hero-section p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 40rem;
+    }
+
+    .hero-section h1 {
+        font-size: 4rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: 30rem;
+        padding: 0 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
