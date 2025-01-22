@@ -9,9 +9,7 @@
         <script src="./js/countdown.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
         <link href="./css/bootstrap.min.css" rel="stylesheet" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -27,67 +25,84 @@
                     <div>
                         <h1>¡Nos Casamos!</h1>
                         <p>Camila & David</p>
-                        <!-- <p id="countdown" class="countdown">...</p> -->
                         <div class="row">
                             <p class="countdown">Quedan</p>
-                            <p
-                                id="countdown_days"
-                                class="col-3"
-                                style="font-size: 3rem"></p>
-                            <p
-                                id="countdown_hours"
-                                class="countdown col-3"
-                                style="font-size: 3rem"></p>
-                            <p
-                                id="countdown_minutes"
-                                class="countdown col-3"
-                                style="font-size: 3rem"></p>
-                            <p
-                                id="countdown_seconds"
-                                class="countdown col-3"
-                                style="font-size: 3rem"></p>
+                            <p id="countdown_days" class="col-3" style="font-size: 3rem"></p>
+                            <p id="countdown_hours" class="countdown col-3" style="font-size: 3rem"></p>
+                            <p id="countdown_minutes" class="countdown col-3" style="font-size: 3rem"></p>
+                            <p id="countdown_seconds" class="countdown col-3" style="font-size: 3rem"></p>
                             <p class="countdown col-3">días</p>
                             <p class="countdown col-3">horas</p>
                             <p class="countdown col-3">mins</p>
                             <p class="countdown col-3">segs</p>
                         </div>
                     </div>
-                    <div class="col-12 text-center my-3">
-                        <img
-                            src="wedding-test.png"
-                            alt="Couple photo"
-                            class="img-fluid rounded" />
+                    <!-- <div class="col-12 text-center my-3">
+                        <img src="wedding-test.png" alt="Couple photo" class="img-fluid rounded" />
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <div class="container text-center">
+            <img src="line-separator.png" style="width: 40rem" />
+        </div>
+        <!-- Sección Carrusel de fotos -->
+        <section class="py-5" style="font-family: Montserrat">
+            <div class="container">
+                <div class="row text-center">
+                    <div style="margin-bottom: 1rem;"><img src="icons/camera.gif" style="width: 5rem" width="auto"/></div>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Retratos de Nuestro Amor</h1>
+                    <p class="subtitle">Un minuto, un segundo, un instante que queda en la eternidad</p>
+                    <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators" style="top: 440px;">
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                                <div class="instant-photo">
+                                    <img src="https://placehold.co/600x600.png" alt="Pareja enamorada" />
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                                <div class="instant-photo">
+                                    <img src="https://placehold.co/600x600.png" alt="Atardecer romántico" />
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                                <div class="instant-photo">
+                                    <img src="https://placehold.co/600x600.png" alt="Paseo por el campo" />
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
         <div class="container text-center">
-            <img src="line-separator.png" style="width: 40rem;">
+            <img src="line-separator.png" style="width: 40rem" />
         </div>
         <!-- Sección Detalles del Evento -->
         <section class="py-5" style="font-family: Montserrat">
             <div class="container">
                 <div class="row text-center">
                     <div>
-                        <img
-                            src="icons/wedding.gif"
-                            style="width: 7rem"
-                            width="auto" />
+                        <img src="icons/wedding.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi">Detalles del Evento</h1>
-                    <p>
-                        El día más esperado de nuestras vidas finalmente ha
-                        llegado, acompañennos en nuestra boda y sean parte de
-                        nuestra historia.
-                    </p>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Detalles del Evento</h1>
+                    <p>El día más esperado de nuestras vidas finalmente ha llegado, acompañennos en nuestra boda y sean parte de nuestra historia.</p>
                     <div class="col-md-6">
                         <div>
-                            <img
-                                src="icons/wedding-planner.gif"
-                                style="width: 3rem"
-                                width="auto" />
+                            <img src="icons/wedding-planner.gif" style="width: 3rem" width="auto" />
                         </div>
-                        <h2 style="font-family: Ms Madi">Fecha y Hora</h2>
+                        <h2 style="font-family: Ms Madi; font-size: 3rem;">Fecha y Hora</h2>
                         <p>
                             18 de Octubre de 2025, 4:00 PM<br />
                             <b>Save the Date</b>
@@ -95,38 +110,26 @@
                     </div>
                     <div class="col-md-6">
                         <div>
-                            <img
-                                src="icons/toast.gif"
-                                style="width: 3rem"
-                                width="auto" />
+                            <img src="icons/toast.gif" style="width: 3rem" width="auto" />
                         </div>
-                        <h2 style="font-family: Ms Madi">Lugar</h2>
-                        <p>
-                            Salón de eventos "Villa Jardín"<br />Calle Capitán
-                            Valois Rivarola 250<br />Luque - Paraguay
-                        </p>
+                        <h2 style="font-family: Ms Madi; font-size: 3rem;">Lugar</h2>
+                        <p>Salón de eventos "Villa Jardín"<br />Calle Capitán Valois Rivarola 250<br />Luque - Paraguay</p>
                     </div>
                 </div>
             </div>
         </section>
         <div class="container text-center">
-            <img src="line-separator.png" style="width: 40rem;">
+            <img src="line-separator.png" style="width: 40rem" />
         </div>
         <!-- Sección Ubicación -->
         <section class="py-5" style="font-family: Montserrat">
             <div class="container">
                 <div class="row text-center">
                     <div>
-                        <img
-                            src="icons/favourite-location.gif"
-                            style="width: 7rem"
-                            width="auto" />
+                        <img src="icons/favourite-location.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi">Ubicación del Evento</h1>
-                    <p>
-                        El lugar de nuestra boda es un hermoso salón rodeado de
-                        jardines.
-                    </p>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Ubicación del Evento</h1>
+                    <p>El lugar de nuestra boda es un hermoso salón rodeado de jardines.</p>
                     <div class="col-md-12" style="margin-bottom: 1rem">
                         <div>
                             <iframe
@@ -141,40 +144,32 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <a
-                            href="https://maps.app.goo.gl/AyEHacgVMEXQk9BX6"
-                            class="btn btn-outline-secondary"
-                            ><i class="bi bi-geo-alt-fill"></i> Ver en el
-                            Mapa</a
-                        >
+                        <a href="https://maps.app.goo.gl/AyEHacgVMEXQk9BX6" class="btn btn-outline-secondary"><i class="bi bi-geo-alt-fill"></i> Ver en el Mapa</a>
                     </div>
                 </div>
             </div>
         </section>
         <div class="container text-center">
-            <img src="line-separator.png" style="width: 40rem;">
+            <img src="line-separator.png" style="width: 40rem" />
         </div>
         <!--Sección de Info para la Fiesta-->
         <section class="py-5">
             <div class="container party-section text-center">
-                <h1 class="section-title" style="font-family: Ms Madi">Fiesta</h1>
-                <div class="container" style="font-family: Montserrat;">
+                <h1 class="section-title" style="font-family: Ms Madi; font-size: 3.8rem;">Fiesta</h1>
+                <div class="container" style="font-family: Montserrat">
                     <div class="row">
                         <div class="col-md-4 py-2">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Música</h5>
                                     <div>
-                                        <img
-                                            src="icons/musica.gif"
-                                            style="width: 4rem"
-                                            width="auto" />
+                                        <img src="icons/musica.gif" style="width: 4rem" width="auto" />
                                     </div>
-                                    <p class="card-text">
-                                        ¿Cuál es esa canción que no debería
-                                        faltar en la Playlist de la fiesta?
-                                    </p>
-                                    <a href="" class="btn btn-outline-success"> <i class="bi bi-spotify"></i> Sportify</a>
+                                    <p class="card-text">¿Cuál es esa canción que no debería faltar en la Playlist de la fiesta?</p>
+                                    <a href="" class="btn btn-outline-success">
+                                        <i class="bi bi-spotify"></i>
+                                        Sportify</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -183,16 +178,13 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Dress Code</h5>
                                     <div>
-                                        <img
-                                            src="icons/traje.gif"
-                                            style="width: 4rem"
-                                            width="auto" />
+                                        <img src="icons/traje.gif" style="width: 4rem" width="auto" />
                                     </div>
-                                    <p class="card-text">
-                                        Usa tu mejor atuendo para esta ocasión
-                                        especial.
-                                    </p>
-                                    <a href="" class="btn btn-outline-danger"> <i class="bi bi-pinterest"></i> Pinterest</a>
+                                    <p class="card-text">Usa tu mejor atuendo para esta ocasión especial.</p>
+                                    <a href="" class="btn btn-outline-danger">
+                                        <i class="bi bi-pinterest"></i>
+                                        Pinterest</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -201,16 +193,13 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Tips y Notas</h5>
                                     <div>
-                                        <img
-                                            src="icons/advice.gif"
-                                            style="width: 4rem"
-                                            width="auto" />
+                                        <img src="icons/advice.gif" style="width: 4rem" width="auto" />
                                     </div>
-                                    <p class="card-text">
-                                        Información útil para disfrutar al
-                                        máximo del evento.
-                                    </p>
-                                    <a href="" class="btn btn-outline-secondary"> <i class="bi bi-info-circle-fill"></i> Ver más</a>
+                                    <p class="card-text">Información útil para disfrutar al máximo del evento.</p>
+                                    <a href="" class="btn btn-outline-secondary">
+                                        <i class="bi bi-info-circle-fill"></i>
+                                        Ver más</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -219,23 +208,18 @@
             </div>
         </section>
         <div class="container text-center">
-            <img src="line-separator.png" style="width: 40rem;">
+            <img src="line-separator.png" style="width: 40rem" />
         </div>
         <!-- Sección Registro de Regalos -->
         <section class="py-5" style="font-family: Montserrat">
             <div class="container">
                 <div class="row text-center">
                     <div>
-                        <img
-                            src="icons/present.gif"
-                            style="width: 7rem"
-                            width="auto" />
+                        <img src="icons/present.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi">Registro de Regalos</h1>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Registro de Regalos</h1>
                     <p>
-                        Gracias por acompañarnos. Si desean hacernos un
-                        obsequio, pueden ayudarnos en nuestro sueño de formar
-                        nuestro hogar con una contribución económica que nos
+                        Gracias por acompañarnos. Si desean hacernos un obsequio, pueden ayudarnos en nuestro sueño de formar nuestro hogar con una contribución económica que nos
                         permitirá establecer las bases de nuestro futuro.
                         <b>¡Todo suma!</b>
                     </p>
@@ -254,86 +238,53 @@
                         <div class="collapse container px-4" id="collapseGift">
                             <div class="row">
                                 <!-- Primera columna -->
-                                <div
-                                    class="col-12 col-md-6 order-md-1 text-center">
+                                <div class="col-12 col-md-6 order-md-1 text-center">
                                     <ul class="list-group">
-                                        <li
-                                            class="list-group-item p-3 border-0">
-                                            <h4>
-                                                <b>Cuentas de David</b><br />
-                                            </h4>
-                                            <h5>
-                                                <b>Titular:</b> David López<br />
-                                            </h5>
+                                        <li class="list-group-item p-3 border-0">
+                                            <h4><b>Cuentas de David</b><br /></h4>
+                                            <h5><b>Titular:</b> David López<br /></h5>
                                             <h5><b>CI N°:</b> 5118644</h5>
                                         </li>
-                                        <li
-                                            class="list-group-item p-3 border-0">
+                                        <li class="list-group-item p-3 border-0">
                                             <h5>
-                                                <img
-                                                    src="icons/GNB.svg"
-                                                    width="auto" />
+                                                <img src="icons/GNB.svg" width="auto" />
                                                 Banco GNB<br />
                                             </h5>
-                                            <h6>
-                                                <b>Cta N°: </b>13106001002<br />
-                                            </h6>
+                                            <h6><b>Cta N°: </b>13106001002<br /></h6>
                                             <h6><b>Alias: </b>5118644</h6>
                                         </li>
-                                        <li
-                                            class="list-group-item p-3 border-0">
+                                        <li class="list-group-item p-3 border-0">
                                             <h5>
-                                                <img
-                                                    src="icons/UenoBank.svg"
-                                                    width="auto" />
+                                                <img src="icons/UenoBank.svg" width="auto" />
                                                 Ueno Bank<br />
                                             </h5>
-                                            <h6>
-                                                <b>Cta N°: </b>61923460<br />
-                                            </h6>
+                                            <h6><b>Cta N°: </b>61923460<br /></h6>
                                             <h6><b>Alias: </b>0981133948</h6>
                                         </li>
                                     </ul>
                                 </div>
                                 <!-- Segunda columna -->
-                                <div
-                                    class="col-12 col-md-6 order-md-2 text-center">
+                                <div class="col-12 col-md-6 order-md-2 text-center">
                                     <ul class="list-group">
-                                        <li
-                                            class="list-group-item p-3 border-0">
-                                            <h4>
-                                                <b>Cuentas de Camila</b><br />
-                                            </h4>
-                                            <h5>
-                                                <b>Titular:</b> Camila
-                                                Galeano<br />
-                                            </h5>
+                                        <li class="list-group-item p-3 border-0">
+                                            <h4><b>Cuentas de Camila</b><br /></h4>
+                                            <h5><b>Titular:</b> Camila Galeano<br /></h5>
                                             <h5><b>CI N°:</b> 5387764</h5>
                                         </li>
-                                        <li
-                                            class="list-group-item p-3 border-0">
+                                        <li class="list-group-item p-3 border-0">
                                             <h5>
-                                                <img
-                                                    src="icons/Itau.svg"
-                                                    width="auto" />
+                                                <img src="icons/Itau.svg" width="auto" />
                                                 Banco Itaú<br />
                                             </h5>
-                                            <h6>
-                                                <b>Cta N°: </b>25237255<br />
-                                            </h6>
+                                            <h6><b>Cta N°: </b>25237255<br /></h6>
                                             <h6><b>Alias: </b>0994727433</h6>
                                         </li>
-                                        <li
-                                            class="list-group-item p-3 border-0">
+                                        <li class="list-group-item p-3 border-0">
                                             <h5>
-                                                <img
-                                                    src="icons/UenoBank.svg"
-                                                    width="auto" />
+                                                <img src="icons/UenoBank.svg" width="auto" />
                                                 Ueno Bank<br />
                                             </h5>
-                                            <h6>
-                                                <b>Cta N°: </b>14435757<br />
-                                            </h6>
+                                            <h6><b>Cta N°: </b>14435757<br /></h6>
                                             <h6><b>Alias: </b>5387764</h6>
                                         </li>
                                     </ul>
@@ -345,22 +296,21 @@
             </div>
         </section>
         <div class="container text-center">
-            <img src="line-separator.png" style="width: 40rem;">
+            <img src="line-separator.png" style="width: 40rem" />
         </div>
         <!-- Sección RSVP -->
         <section class="py-5" style="font-family: Montserrat">
             <div class="container">
                 <div class="row text-center">
                     <div>
-                        <img
-                            src="icons/form.gif"
-                            style="width: 7rem"
-                            width="auto" />
+                        <img src="icons/form.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi">Confirmación de Asistencia</h1>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Confirmación de Asistencia</h1>
                     <p>Por favor, confirma tu asistencia antes del 30 de Junio.</p>
                     <div class="col-md-12">
-                        <a href="https://forms.gle/puqKnNjmiPcLbXSa8" class="btn btn-outline-success" style="margin-bottom: 1rem"><i class="bi bi-list-check"></i> Completar formulario</a>
+                        <a href="https://forms.gle/puqKnNjmiPcLbXSa8" class="btn btn-outline-success" style="margin-bottom: 1rem"
+                            ><i class="bi bi-list-check"></i> Completar formulario</a
+                        >
                     </div>
                     <p>Consultas:</p>
                     <div class="col-md-12">

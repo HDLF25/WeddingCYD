@@ -5,7 +5,7 @@ body {
 }
 .hero-section {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("../PaperBG.jpg") no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 80rem;
     display: flex;
     justify-content: center;
@@ -98,4 +98,54 @@ iframe {
     .hero-section p {
         font-size: 1rem;
     }
+}
+
+.instant-photo {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    /*width: 80%;*/
+    width: 22rem;
+    padding-bottom: 4rem;
+}
+
+.instant-photo img {
+    max-width: 100%;
+    border-bottom: 8px solid #fff;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #305030;
+}
+
+.carousel-caption {
+    color: #305030;
+    font-weight: bold;
+}
+
+.title {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2E4235;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.camera-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #2E4235;
 }
