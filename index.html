@@ -12,9 +12,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Ms+Madi&family=Playfair+Display:wght@400;700&display=swap"
-            rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Ms+Madi&family=Playfair+Display:wght@400;700&family=Parisienne&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+
     </head>
 
     <body>
@@ -24,10 +23,14 @@
                 <div class="row d-flex flex-column-reverse flex-md-column">
                     <div>
                         <h1>¡Nos Casamos!</h1>
-                        <p>Camila & David</p>
+                        <p>Camila</p>
+                        <div class="container" style="background-color: #788b82; width: 40px; height: 40px; border-radius: 50%; color: #fff;">
+                            <p>&</p>
+                        </div>
+                        <p>David</p>
                         <div class="row">
                             <p class="countdown">Quedan</p>
-                            <p id="countdown_days" class="col-3" style="font-size: 3rem"></p>
+                            <p id="countdown_days" class="countdown col-3" style="font-size: 3rem"></p>
                             <p id="countdown_hours" class="countdown col-3" style="font-size: 3rem"></p>
                             <p id="countdown_minutes" class="countdown col-3" style="font-size: 3rem"></p>
                             <p id="countdown_seconds" class="countdown col-3" style="font-size: 3rem"></p>
@@ -50,7 +53,10 @@
         <section class="py-5" style="font-family: Montserrat">
             <div class="container">
                 <div class="row text-center">
-                    <div style="margin-bottom: 1rem;"><img src="icons/camera.gif" style="width: 5rem" width="auto"/></div>
+                    <div style="margin-bottom: 1rem;">
+                        <!--<img src="icons/outline_task-checklist.svg" style="width: 4rem;" alt="My Happy SVG"/>-->
+                        <img src="icons/camera.gif" style="width: 5rem" width="auto"/>
+                    </div>
                     <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Retratos de Nuestro Amor</h1>
                     <p class="subtitle">Un minuto, un segundo, un instante que queda en la eternidad</p>
                     <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -58,6 +64,8 @@
                             <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active"></button>
                             <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
@@ -67,12 +75,22 @@
                             </div>
                             <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
                                 <div class="instant-photo">
-                                    <img src="https://placehold.co/600x600.png" alt="Atardecer romántico" />
+                                    <img src="https://placehold.co/700x700.png" alt="Atardecer romántico" />
                                 </div>
                             </div>
                             <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
                                 <div class="instant-photo">
-                                    <img src="https://placehold.co/600x600.png" alt="Paseo por el campo" />
+                                    <img src="https://placehold.co/800x800.png" alt="Paseo por el campo" />
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                                <div class="instant-photo">
+                                    <img src="https://placehold.co/900x900.png" alt="Paseo por el campo" />
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                                <div class="instant-photo">
+                                    <img src="https://placehold.co/1000x1000.png" alt="Paseo por el campo" />
                                 </div>
                             </div>
                         </div>
@@ -166,7 +184,7 @@
                                         <img src="icons/musica.gif" style="width: 4rem" width="auto" />
                                     </div>
                                     <p class="card-text">¿Cuál es esa canción que no debería faltar en la Playlist de la fiesta?</p>
-                                    <a href="" class="btn btn-outline-success">
+                                    <a href="https://open.spotify.com/playlist/1zVpdKpfylSIqjc4WckmO0?si=iwredCkjR1K11LFGwdKh7w" class="btn btn-outline-success">
                                         <i class="bi bi-spotify"></i>
                                         Sportify</a
                                     >

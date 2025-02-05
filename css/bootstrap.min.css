@@ -6865,6 +6865,12 @@ fieldset:disabled .btn {
     }
 }
 
+@media (min-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        flex: 1 0 33.33%;
+    }
+}
+
 .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {
@@ -7006,25 +7012,6 @@ fieldset:disabled .btn {
     transition: opacity .6s ease
 }
 
-/* Original:
-.carousel-indicators [data-bs-target] {
-    box-sizing: content-box;
-    flex: 0 1 auto;
-    width: 30px;
-    height: 3px;
-    padding: 0;
-    margin-right: 3px;
-    margin-left: 3px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: #000000;
-    background-clip: padding-box;
-    border: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    opacity: .5;
-    transition: opacity .6s ease
-}*/
 
 @media (prefers-reduced-motion:reduce) {
     .carousel-indicators [data-bs-target] {
