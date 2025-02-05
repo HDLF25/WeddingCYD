@@ -12,8 +12,11 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Ms+Madi&family=Playfair+Display:wght@400;700&family=Parisienne&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
-
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Ms+Madi&family=Playfair+Display:wght@400;700&family=Parisienne&family=Dancing+Script:wght@400;700&display=swap"
+            rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="./js/supabase.js"></script>
     </head>
 
     <body>
@@ -24,7 +27,7 @@
                     <div>
                         <h1>¡Nos Casamos!</h1>
                         <p>Camila</p>
-                        <div class="container" style="background-color: #788b82; width: 40px; height: 40px; border-radius: 50%; color: #fff;">
+                        <div class="container" style="background-color: #788b82; width: 40px; height: 40px; border-radius: 50%; color: #fff">
                             <p>&</p>
                         </div>
                         <p>David</p>
@@ -53,14 +56,14 @@
         <section class="py-5" style="font-family: Montserrat">
             <div class="container">
                 <div class="row text-center">
-                    <div style="margin-bottom: 1rem;">
+                    <div style="margin-bottom: 1rem">
                         <!--<img src="icons/outline_task-checklist.svg" style="width: 4rem;" alt="My Happy SVG"/>-->
-                        <img src="icons/camera.gif" style="width: 5rem" width="auto"/>
+                        <img src="icons/camera.gif" style="width: 5rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Retratos de Nuestro Amor</h1>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem">Retratos de Nuestro Amor</h1>
                     <p class="subtitle">Un minuto, un segundo, un instante que queda en la eternidad</p>
                     <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators" style="top: 440px;">
+                        <div class="carousel-indicators" style="top: 440px">
                             <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active"></button>
                             <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2"></button>
@@ -68,27 +71,27 @@
                             <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                            <div class="carousel-item active" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
                                     <img src="https://placehold.co/600x600.png" alt="Pareja enamorada" />
                                 </div>
                             </div>
-                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
                                     <img src="https://placehold.co/700x700.png" alt="Atardecer romántico" />
                                 </div>
                             </div>
-                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
                                     <img src="https://placehold.co/800x800.png" alt="Paseo por el campo" />
                                 </div>
                             </div>
-                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
                                     <img src="https://placehold.co/900x900.png" alt="Paseo por el campo" />
                                 </div>
                             </div>
-                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
+                            <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
                                     <img src="https://placehold.co/1000x1000.png" alt="Paseo por el campo" />
                                 </div>
@@ -114,13 +117,13 @@
                     <div>
                         <img src="icons/wedding.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Detalles del Evento</h1>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem">Detalles del Evento</h1>
                     <p>El día más esperado de nuestras vidas finalmente ha llegado, acompañennos en nuestra boda y sean parte de nuestra historia.</p>
                     <div class="col-md-6">
                         <div>
                             <img src="icons/wedding-planner.gif" style="width: 3rem" width="auto" />
                         </div>
-                        <h2 style="font-family: Ms Madi; font-size: 3rem;">Fecha y Hora</h2>
+                        <h2 style="font-family: Ms Madi; font-size: 3rem">Fecha y Hora</h2>
                         <p>
                             18 de Octubre de 2025, 4:00 PM<br />
                             <b>Save the Date</b>
@@ -130,7 +133,7 @@
                         <div>
                             <img src="icons/toast.gif" style="width: 3rem" width="auto" />
                         </div>
-                        <h2 style="font-family: Ms Madi; font-size: 3rem;">Lugar</h2>
+                        <h2 style="font-family: Ms Madi; font-size: 3rem">Lugar</h2>
                         <p>Salón de eventos "Villa Jardín"<br />Calle Capitán Valois Rivarola 250<br />Luque - Paraguay</p>
                     </div>
                 </div>
@@ -146,7 +149,7 @@
                     <div>
                         <img src="icons/favourite-location.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Ubicación del Evento</h1>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem">Ubicación del Evento</h1>
                     <p>El lugar de nuestra boda es un hermoso salón rodeado de jardines.</p>
                     <div class="col-md-12" style="margin-bottom: 1rem">
                         <div>
@@ -173,7 +176,7 @@
         <!--Sección de Info para la Fiesta-->
         <section class="py-5">
             <div class="container party-section text-center">
-                <h1 class="section-title" style="font-family: Ms Madi; font-size: 3.8rem;">Fiesta</h1>
+                <h1 class="section-title" style="font-family: Ms Madi; font-size: 3.8rem">Fiesta</h1>
                 <div class="container" style="font-family: Montserrat">
                     <div class="row">
                         <div class="col-md-4 py-2">
@@ -235,7 +238,7 @@
                     <div>
                         <img src="icons/present.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Registro de Regalos</h1>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem">Registro de Regalos</h1>
                     <p>
                         Gracias por acompañarnos. Si desean hacernos un obsequio, pueden ayudarnos en nuestro sueño de formar nuestro hogar con una contribución económica que nos
                         permitirá establecer las bases de nuestro futuro.
@@ -256,56 +259,60 @@
                         <div class="collapse container px-4" id="collapseGift">
                             <div class="row">
                                 <!-- Primera columna -->
-                                <div class="col-12 col-md-6 order-md-1 text-center">
-                                    <ul class="list-group">
-                                        <li class="list-group-item p-3 border-0">
-                                            <h4><b>Cuentas de David</b><br /></h4>
-                                            <h5><b>Titular:</b> David López<br /></h5>
-                                            <h5><b>CI N°:</b> 5118644</h5>
-                                        </li>
-                                        <li class="list-group-item p-3 border-0">
-                                            <h5>
-                                                <img src="icons/GNB.svg" width="auto" />
-                                                Banco GNB<br />
-                                            </h5>
-                                            <h6><b>Cta N°: </b>13106001002<br /></h6>
-                                            <h6><b>Alias: </b>5118644</h6>
-                                        </li>
-                                        <li class="list-group-item p-3 border-0">
-                                            <h5>
-                                                <img src="icons/UenoBank.svg" width="auto" />
-                                                Ueno Bank<br />
-                                            </h5>
-                                            <h6><b>Cta N°: </b>61923460<br /></h6>
-                                            <h6><b>Alias: </b>0981133948</h6>
-                                        </li>
-                                    </ul>
+                                <div class="col-md-6 order-md-1 text-center">
+                                    <div class="card">
+                                        <ul class="list-group">
+                                            <li class="list-group-item p-3 border-0">
+                                                <h4><b>Cuentas del Novio</b><br /></h4>
+                                                <h5><b>Titular:</b> David López<br /></h5>
+                                                <h5><b>CI N°:</b> 5118644</h5>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/GNB.svg" width="auto" />
+                                                    Banco GNB<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>13106001002<br /></h6>
+                                                <h6><b>Alias: </b>5118644</h6>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/UenoBank.svg" width="auto" />
+                                                    Ueno Bank<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>61923460<br /></h6>
+                                                <h6><b>Alias: </b>0981133948</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <!-- Segunda columna -->
                                 <div class="col-12 col-md-6 order-md-2 text-center">
-                                    <ul class="list-group">
-                                        <li class="list-group-item p-3 border-0">
-                                            <h4><b>Cuentas de Camila</b><br /></h4>
-                                            <h5><b>Titular:</b> Camila Galeano<br /></h5>
-                                            <h5><b>CI N°:</b> 5387764</h5>
-                                        </li>
-                                        <li class="list-group-item p-3 border-0">
-                                            <h5>
-                                                <img src="icons/Itau.svg" width="auto" />
-                                                Banco Itaú<br />
-                                            </h5>
-                                            <h6><b>Cta N°: </b>25237255<br /></h6>
-                                            <h6><b>Alias: </b>0994727433</h6>
-                                        </li>
-                                        <li class="list-group-item p-3 border-0">
-                                            <h5>
-                                                <img src="icons/UenoBank.svg" width="auto" />
-                                                Ueno Bank<br />
-                                            </h5>
-                                            <h6><b>Cta N°: </b>14435757<br /></h6>
-                                            <h6><b>Alias: </b>5387764</h6>
-                                        </li>
-                                    </ul>
+                                    <div class="card">
+                                        <ul class="list-group">
+                                            <li class="list-group-item p-3 border-0">
+                                                <h4><b>Cuentas de la Novia</b><br /></h4>
+                                                <h5><b>Titular:</b> Camila Galeano<br /></h5>
+                                                <h5><b>CI N°:</b> 5387764</h5>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/Itau.svg" width="auto" />
+                                                    Banco Itaú<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>25237255<br /></h6>
+                                                <h6><b>Alias: </b>0994727433</h6>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/UenoBank.svg" width="auto" />
+                                                    Ueno Bank<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>14435757<br /></h6>
+                                                <h6><b>Alias: </b>5387764</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -323,12 +330,79 @@
                     <div>
                         <img src="icons/form.gif" style="width: 7rem" width="auto" />
                     </div>
-                    <h1 style="font-family: Ms Madi; font-size: 3.8rem;">Confirmación de Asistencia</h1>
+                    <h1 style="font-family: Ms Madi; font-size: 3.8rem">Confirmación de Asistencia</h1>
                     <p>Por favor, confirma tu asistencia antes del 30 de Junio.</p>
                     <div class="col-md-12">
                         <a href="https://forms.gle/puqKnNjmiPcLbXSa8" class="btn btn-outline-success" style="margin-bottom: 1rem"
                             ><i class="bi bi-list-check"></i> Completar formulario</a
                         >
+                    </div>
+                    <div class="col-md-12">
+                        <p class="d-inline-flex gap-1">
+                            <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+                                <i class="bi bi-list-check"></i> Completar formulario 2
+                            </button>
+                        </p>
+                        <div class="collapse container px-4" id="collapseForm">
+                            <div class="row">
+                                <!-- Primera columna -->
+                                <div class="col-md-6 order-md-1 text-center">
+                                    <div class="card">
+                                        <ul class="list-group">
+                                            <li class="list-group-item p-3 border-0">
+                                                <h4><b>Cuentas del Novio</b><br /></h4>
+                                                <h5><b>Titular:</b> David López<br /></h5>
+                                                <h5><b>CI N°:</b> 5118644</h5>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/GNB.svg" width="auto" />
+                                                    Banco GNB<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>13106001002<br /></h6>
+                                                <h6><b>Alias: </b>5118644</h6>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/UenoBank.svg" width="auto" />
+                                                    Ueno Bank<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>61923460<br /></h6>
+                                                <h6><b>Alias: </b>0981133948</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Segunda columna -->
+                                <div class="col-12 col-md-6 order-md-2 text-center">
+                                    <div class="card">
+                                        <ul class="list-group">
+                                            <li class="list-group-item p-3 border-0">
+                                                <h4><b>Cuentas de la Novia</b><br /></h4>
+                                                <h5><b>Titular:</b> Camila Galeano<br /></h5>
+                                                <h5><b>CI N°:</b> 5387764</h5>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/Itau.svg" width="auto" />
+                                                    Banco Itaú<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>25237255<br /></h6>
+                                                <h6><b>Alias: </b>0994727433</h6>
+                                            </li>
+                                            <li class="list-group-item p-3 border-0">
+                                                <h5>
+                                                    <img src="icons/UenoBank.svg" width="auto" />
+                                                    Ueno Bank<br />
+                                                </h5>
+                                                <h6><b>Cta N°: </b>14435757<br /></h6>
+                                                <h6><b>Alias: </b>5387764</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <p>Consultas:</p>
                     <div class="col-md-12">

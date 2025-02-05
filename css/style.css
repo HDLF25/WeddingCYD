@@ -1,11 +1,13 @@
 body {
     padding-top: 0px;
-    background-color: #ffffff;
+    background: url("../PaperBG2.png");
+    background-size: contain;
     color: #243d3a;
 }
 .hero-section {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("../PaperBG.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("../couplebg.jpg") no-repeat;
     background-size: cover;
+    background-position: center;
     height: 80rem;
     display: flex;
     justify-content: center;
