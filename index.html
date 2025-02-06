@@ -6,6 +6,7 @@
         <title>Invitación de Boda - Camila & David</title>
         <link href="css/style.css" rel="stylesheet" />
         <link rel="icon" href="icons/favicon.png" type="image/png" />
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
         <script src="./js/countdown.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
         <link href="./css/bootstrap.min.css" rel="stylesheet" />
@@ -15,7 +16,6 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Ms+Madi&family=Playfair+Display:wght@400;700&family=Parisienne&family=Dancing+Script:wght@400;700&display=swap"
             rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
         <script src="./js/supabase.js"></script>
     </head>
 
@@ -339,66 +339,29 @@
                     </div>
                     <div class="col-md-12">
                         <p class="d-inline-flex gap-1">
-                            <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+                            <button
+                                class="btn btn-outline-success"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseForm"
+                                aria-expanded="false"
+                                aria-controls="collapseForm">
                                 <i class="bi bi-list-check"></i> Completar formulario 2
                             </button>
                         </p>
                         <div class="collapse container px-4" id="collapseForm">
                             <div class="row">
                                 <!-- Primera columna -->
-                                <div class="col-md-6 order-md-1 text-center">
-                                    <div class="card">
-                                        <ul class="list-group">
-                                            <li class="list-group-item p-3 border-0">
-                                                <h4><b>Cuentas del Novio</b><br /></h4>
-                                                <h5><b>Titular:</b> David López<br /></h5>
-                                                <h5><b>CI N°:</b> 5118644</h5>
-                                            </li>
-                                            <li class="list-group-item p-3 border-0">
-                                                <h5>
-                                                    <img src="icons/GNB.svg" width="auto" />
-                                                    Banco GNB<br />
-                                                </h5>
-                                                <h6><b>Cta N°: </b>13106001002<br /></h6>
-                                                <h6><b>Alias: </b>5118644</h6>
-                                            </li>
-                                            <li class="list-group-item p-3 border-0">
-                                                <h5>
-                                                    <img src="icons/UenoBank.svg" width="auto" />
-                                                    Ueno Bank<br />
-                                                </h5>
-                                                <h6><b>Cta N°: </b>61923460<br /></h6>
-                                                <h6><b>Alias: </b>0981133948</h6>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- Segunda columna -->
-                                <div class="col-12 col-md-6 order-md-2 text-center">
-                                    <div class="card">
-                                        <ul class="list-group">
-                                            <li class="list-group-item p-3 border-0">
-                                                <h4><b>Cuentas de la Novia</b><br /></h4>
-                                                <h5><b>Titular:</b> Camila Galeano<br /></h5>
-                                                <h5><b>CI N°:</b> 5387764</h5>
-                                            </li>
-                                            <li class="list-group-item p-3 border-0">
-                                                <h5>
-                                                    <img src="icons/Itau.svg" width="auto" />
-                                                    Banco Itaú<br />
-                                                </h5>
-                                                <h6><b>Cta N°: </b>25237255<br /></h6>
-                                                <h6><b>Alias: </b>0994727433</h6>
-                                            </li>
-                                            <li class="list-group-item p-3 border-0">
-                                                <h5>
-                                                    <img src="icons/UenoBank.svg" width="auto" />
-                                                    Ueno Bank<br />
-                                                </h5>
-                                                <h6><b>Cta N°: </b>14435757<br /></h6>
-                                                <h6><b>Alias: </b>5387764</h6>
-                                            </li>
-                                        </ul>
+                                <div class="col-md-12 order-md-1 text-center">
+                                    <div class="card container">
+                                        <div class="container mt-5 text-center">
+                                            <h2 class="mb-3">Validar Código de Invitación</h2>
+                                            <div class="input-group mb-3">
+                                                <input type="number" id="codigo" class="form-control" placeholder="Ingrese su código" min="1">
+                                                <button class="btn btn-primary" onclick="validarCodigo()">Validar</button>
+                                            </div>
+                                            <p id="resultado" class="fw-bold"></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

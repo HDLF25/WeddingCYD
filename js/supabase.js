@@ -1,6 +1,6 @@
 const SUPABASE_URL = "https://kdbcaksimnsuflcpcnps.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkYmNha3NpbW5zdWZsY3BjbnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3MTU5OTAsImV4cCI6MjA1NDI5MTk5MH0.nicW59e5cZh-Vq8IN-DwIOpskwKg_FAlAeCiiyjmBeA";
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 async function validarCodigo() {
     const codigo = document.getElementById("codigo").value;
@@ -16,9 +16,9 @@ async function validarCodigo() {
     try {
         // Consultar en la tabla "invitados" si existe el código ingresado
         const { data, error } = await supabase
-            .from("invitados")
+            .from("guests")
             .select("id") // Seleccionamos solo el ID por eficiencia
-            .eq("codigo", codigo)
+            .eq("private_code", codigo)
             .single(); // single() para obtener solo un resultado
 
         if (error && error.code !== "PGRST116") {
