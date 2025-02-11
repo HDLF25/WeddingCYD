@@ -16,7 +16,7 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Ms+Madi&family=Playfair+Display:wght@400;700&family=Parisienne&family=Dancing+Script:wght@400;700&display=swap"
             rel="stylesheet" />
-        <script src="./js/supabase.js"></script>
+        <script src="./js/supabase2.js"></script>
     </head>
 
     <body>
@@ -202,7 +202,9 @@
                                         <img src="icons/traje.gif" style="width: 4rem" width="auto" />
                                     </div>
                                     <p class="card-text">Usa tu mejor atuendo para esta ocasión especial.</p>
-                                    <a href="" class="btn btn-outline-danger">
+                                    <a
+                                        href="https://www.pinterest.com/search/pins/?rs=ac&len=2&q=formal%20dress%20code%20for%20men%20and%20women&eq=formal%20dress%20code%20for%20men&etslf=1886"
+                                        class="btn btn-outline-danger">
                                         <i class="bi bi-pinterest"></i>
                                         Pinterest</a
                                     >
@@ -331,12 +333,13 @@
                         <img src="icons/form.gif" style="width: 7rem" width="auto" />
                     </div>
                     <h1 style="font-family: Ms Madi; font-size: 3.8rem">Confirmación de Asistencia</h1>
+                    <p>¡Nos encantaría contar contigo en este día tan especial! Tu presencia hará de nuestra celebración un momento aún más inolvidable.</p>
                     <p>Por favor, confirma tu asistencia antes del 30 de Junio.</p>
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <a href="https://forms.gle/puqKnNjmiPcLbXSa8" class="btn btn-outline-success" style="margin-bottom: 1rem"
                             ><i class="bi bi-list-check"></i> Completar formulario</a
                         >
-                    </div>
+                    </div> -->
                     <div class="col-md-12">
                         <p class="d-inline-flex gap-1">
                             <button
@@ -346,21 +349,24 @@
                                 data-bs-target="#collapseForm"
                                 aria-expanded="false"
                                 aria-controls="collapseForm">
-                                <i class="bi bi-list-check"></i> Completar formulario 2
+                                <i class="bi bi-list-check"></i> Completar formulario
                             </button>
                         </p>
                         <div class="collapse container px-4" id="collapseForm">
                             <div class="row">
-                                <!-- Primera columna -->
                                 <div class="col-md-12 order-md-1 text-center">
-                                    <div class="card container">
-                                        <div class="container mt-5 text-center">
-                                            <h2 class="mb-3">Validar Código de Invitación</h2>
+                                    <div class="container mt-1 mb-3">
+                                        <div class="card p-4">
+                                            <h2 class="text-center mb-3">Confirmación de Invitación</h2>
+                                            <label for="codigo" class="form-label">Ingresa tu código:</label>
                                             <div class="input-group mb-3">
-                                                <input type="number" id="codigo" class="form-control" placeholder="Ingrese su código" min="1">
-                                                <button class="btn btn-primary" onclick="validarCodigo()">Validar</button>
+                                                <input type="number" id="codigo" class="form-control" placeholder="Ej.: 123456" />
+                                                <button class="btn btn-outline-success" onclick="validarCodigo()"><i class="bi bi-check-circle"></i> Comprobar</button>
                                             </div>
-                                            <p id="resultado" class="fw-bold"></p>
+                                            <div id="infoInvitados" class="d-none">
+                                                <!-- <h4 class="text-center mb-3">Lista de Invitados</h4>-->
+                                                <div class="row" id="listaInvitados"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -382,5 +388,14 @@
                 <p>&copy; 2025 Camila & David</p>
             </div>
         </footer>
+        <!-- Alerta de confirmación -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="toastConfirmacion" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">¡Confirmación enviada con éxito!</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
