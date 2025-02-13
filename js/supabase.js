@@ -1,124 +1,150 @@
+function getParameterByName(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const codigo = getParameterByName("pc");
+    if (codigo) {
+        document.getElementById("codigo").value = codigo;
+    }
+});
+
 const SUPABASE_URL = "https://kdbcaksimnsuflcpcnps.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkYmNha3NpbW5zdWZsY3BjbnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3MTU5OTAsImV4cCI6MjA1NDI5MTk5MH0.nicW59e5cZh-Vq8IN-DwIOpskwKg_FAlAeCiiyjmBeA";
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-let codigoIngresado = null;
-let nombrePrincipal = "";
-let cantidadInvitadosExtra = 0;
-let invitadosExtras = [];
-let opcionSeleccionada = null;
-
 async function validarCodigo() {
-    const codigo = document.getElementById("codigo").value;
-    const mensaje = document.getElementById("mensaje");
-    const detalle = document.getElementById("detalle");
-    const extraInvitados = document.getElementById("extraInvitados");
-    document.getElementById("errorMensaje").textContent = "";
+    let codigo = document.getElementById("codigo").value;
 
-    extraInvitados.innerHTML = "";
-
-    if (!codigo || isNaN(codigo) || codigo <= 0) {
-        mensaje.textContent = "Ingrese un código válido.";
-        mensaje.style.color = "red";
+    if (!codigo) {
+        alert("Por favor, ingresa un código.");
+        return;
+    }
+    
+    let { data, error } = await supabase.from("guests").select("id, guest, amountguest, isconfirmed").eq("privatecode", codigo);
+    
+    if (error || !data || data.length === 0) {
+        alert("Código no válido.");
         return;
     }
 
-    try {
-        const { data, error } = await supabase
-            .from("guests")
-            .select("id, guest, amountguest, isconfirmed")
-            .eq("privatecode", codigo)
-            .single();
+    let isConfirmed = data[0].isconfirmed;
+    let guestName = data[0].guest;
+    let amountGuest = data[0].amountguest;
 
-            
-        if (error && error.code !== "PGRST116") {
-            console.error(error);
-            mensaje.textContent = "Error al consultar la base de datos.";
-            mensaje.style.color = "red";
-            return;
-        }
+    let listaInvitados = document.getElementById("listaInvitados");
+    listaInvitados.innerHTML = "";
 
-        if (data) {
-            codigoIngresado = data.id;
-            nombrePrincipal = data.guest;
-            cantidadInvitadosExtra = data.amountguest - 1;
-
-            if (data.isconfirmed) {
-                document.getElementById("infoInvitado").classList.add("d-none");
-                mensaje.textContent = `${data.guest} ya ha confirmado su asistencia.`;
-                mensaje.style.color = "green";
-                detalle.textContent = "";
-            } else {
-                document.getElementById("infoInvitado").classList.remove("d-none");
-                mensaje.textContent = `Bienvenido/a, ${data.guest}`;
-                mensaje.style.color = "black";
-                const amountguest = data.amountguest;
-                if (amountguest == 1) {
-                    detalle.textContent = `Invitación válida para ${data.amountguest} persona`;
-                } else {
-                    detalle.textContent = `Invitación válida para ${data.amountguest} personas`;
-                }
-
-                if (cantidadInvitadosExtra > 0) {
-                    extraInvitados.innerHTML = "<h5>Ingresa los nombres de tus acompañantes:</h5>";
-                    for (let i = 1; i <= cantidadInvitadosExtra; i++) {
-                        extraInvitados.innerHTML += `
-                            <input type="text" id="invitado${i}" class="form-control mt-2" placeholder="Nombre del invitado ${i + 1}">
-                        `;
-                    }
-                }
-            }
-        } else {
-            mensaje.textContent = "Código no encontrado. ❌";
-            mensaje.style.color = "red";
-            detalle.textContent = "";
-        }
-    } catch (err) {
-        console.error(err);
-        mensaje.textContent = "Ocurrió un error inesperado.";
-        mensaje.style.color = "red";
+    if (isConfirmed) {
+        listaInvitados.innerHTML = `<h3 class="text-success text-center">Ya se confirmó la asistencia!</h3>`;
+        document.getElementById("infoInvitados").classList.remove("d-none");
+        return;
     }
+    
+    listaInvitados.innerHTML = `<h3 class="text-center"><b>Bienvenido,<br>${guestName}</b></h3>`;
+    listaInvitados.innerHTML += `<h4 class="text-center mb-3">Lista de Invitados</h4>`;
+    listaInvitados.innerHTML += `<p class="text-center">Invitación válida para ${amountGuest} persona(s)</p>`;
+
+    let guestNameClean = guestName.replace(/ y Flia/i, "").trim();
+
+    for (let i = 0; i < amountGuest; i++) {
+        let div = document.createElement("div");
+        div.classList.add("mb-3", "p-3", "col-sm-4");
+        
+        let nombreInvitado = (i === 0) ? guestNameClean : "";
+        
+        div.innerHTML = `
+            <label class="form-label"><b>• Invitado N°${i + 1}:</b></label>
+            <input type="text" class="form-control mb-2" value="${nombreInvitado}" placeholder="Nombre del invitado ${i + 1}" required>
+
+            <h6>¿Asistirá?</h6>
+            <div class="d-inline-block text-start">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="asistencia_${i}" value="true">
+                    <label class="form-check-label">Sí, asistiré</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="asistencia_${i}" value="false">
+                    <label class="form-check-label">No podré asistir</label>
+                </div>
+            </div>
+        `;
+
+        listaInvitados.appendChild(div);
+    }
+
+    if (!isConfirmed) {
+        let button = document.createElement("button");
+        button.classList.add("btn", "btn-outline-primary", "w-100", "mt-3");
+        button.textContent = "Enviar";
+        button.onclick = enviarConfirmacion;
+        listaInvitados.appendChild(button);
+    }
+
+    document.getElementById("infoInvitados").classList.remove("d-none");
 }
 
-function seleccionarOpcion(asiste) {
-    opcionSeleccionada = asiste;
-    document.getElementById("errorMensaje").textContent = "";
-}
 
-// Función para enviar confirmación
 async function enviarConfirmacion() {
-    if (opcionSeleccionada === null) {
-        document.getElementById("errorMensaje").textContent = "Seleccione una opción.";
-        return;
-    }
+    let listaInvitados = document.getElementById("listaInvitados").children;
+    let confirmaciones = [];
+    let privateCode = document.getElementById("codigo").value;
 
-    invitadosExtras = [];
-    for (let i = 1; i <= cantidadInvitadosExtra; i++) {
-        const nombre = document.getElementById(`invitado${i}`)?.value.trim();
-        if (nombre) invitadosExtras.push(nombre);
-    }
+    for (let invitado of listaInvitados) {
+        let idGuest = invitado.getAttribute("data-idguest") || null;
+        let guestNameInput = invitado.querySelector("input[type='text']");
+        let asistencia = invitado.querySelector("input[type=radio]:checked");
 
-    try {
-        let insertData = [{ idguest: codigoIngresado, guestname: nombrePrincipal, confirmed: opcionSeleccionada }];
-
-        if (opcionSeleccionada && invitadosExtras.length > 0) {
-            invitadosExtras.forEach((nombre) => {
-                insertData.push({ idguest: codigoIngresado, guestname: nombre, confirmed: true });
-            });
-        }
-
-        const { error } = await supabase.from("guestconfirmed").insert(insertData);
-
-        if (error) {
-            console.error(error);
-            alert("Error al registrar la asistencia.");
+        if (!asistencia) {
+            mostrarToast("Por favor, selecciona una opción para cada invitado.", "danger");
             return;
         }
 
-        alert(opcionSeleccionada ? "¡Asistencia confirmada! 🎉" : "Lamentamos que no puedas asistir. 😢");
-        location.reload();
-    } catch (err) {
-        console.error(err);
-        alert("Ocurrió un error inesperado.");
+        let guestName = guestNameInput ? guestNameInput.value.trim() : "";
+        
+        if (asistencia.value === "true" && guestName === "") {
+            mostrarToast("El nombre del invitado no puede estar vacío si asistirá.", "danger");
+            return;
+        }
+
+        if (asistencia.value === "false" && guestName === "") {
+            guestName = "Null";
+        }
+
+        confirmaciones.push({
+            idguest: idGuest ? parseInt(idGuest) : null,
+            guestname: guestName,
+            privatecodeused: privateCode.trim(),
+            confirmed: asistencia.value === "true",
+        });
     }
+
+    let { error: insertError } = await supabase.from("guestsconfirmed").insert(confirmaciones);
+    if (insertError) {
+        console.error("Error al insertar en guestsconfirmed:", insertError);
+        mostrarToast("Hubo un error al guardar la confirmación.", "danger");
+        return;
+    }
+
+    let { error: updateError } = await supabase.from("guests").update({ isconfirmed: true }).eq("privatecode", privateCode);
+    if (updateError) {
+        console.error("Error al actualizar guests:", updateError);
+        mostrarToast("Error al actualizar la asistencia.", "danger");
+        return;
+    }
+
+    mostrarToast("¡Confirmación enviada con éxito!", "success");
+    setTimeout(() => location.reload(), 3000);
+}
+
+function mostrarToast(mensaje, tipo) {
+    let toastElement = document.getElementById("toastConfirmacion");
+    let toastBody = toastElement.querySelector(".toast-body");
+    toastBody.textContent = mensaje;
+    toastElement.classList.remove("bg-success", "bg-danger");
+    toastElement.classList.add(`bg-${tipo}`);
+    
+    let toast = new bootstrap.Toast(toastElement);
+    toast.show();
 }

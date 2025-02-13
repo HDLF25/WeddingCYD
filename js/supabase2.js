@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const SUPABASE_URL = "https://kdbcaksimnsuflcpcnps.supabase.co";
-const SUPABASE_ANON_KEY =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkYmNha3NpbW5zdWZsY3BjbnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3MTU5OTAsImV4cCI6MjA1NDI5MTk5MH0.nicW59e5cZh-Vq8IN-DwIOpskwKg_FAlAeCiiyjmBeA";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkYmNha3NpbW5zdWZsY3BjbnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3MTU5OTAsImV4cCI6MjA1NDI5MTk5MH0.nicW59e5cZh-Vq8IN-DwIOpskwKg_FAlAeCiiyjmBeA";
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 async function validarCodigo() {
@@ -55,7 +54,7 @@ async function validarCodigo() {
         div.setAttribute("data-idguest", invitado.id);
 
         div.innerHTML = `
-            <label class="form-label"><b>• Invitado ${index + 1}:</b></label>
+            <label class="form-label"><b>• Invitado N°${index + 1}:</b></label>
             <input type="text" class="form-control mb-2" value="${invitado.guest}" readonly>
 
             <h6>¿Asistirá?</h6>
@@ -116,8 +115,6 @@ async function enviarConfirmacion() {
         console.error("Error al actualizar guests:", updateError);
         alert("Error al actualizar la asistencia en la tabla de invitados.");
     }
-
-    // Mostrar mensaje de éxito y recargar
     let toast = new bootstrap.Toast(document.getElementById("toastConfirmacion"));
     toast.show();
     setTimeout(() => location.reload(), 3000);
