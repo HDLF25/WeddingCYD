@@ -335,11 +335,6 @@
                     <h1 style="font-family: Ms Madi; font-size: 3.8rem">Confirmación de Asistencia</h1>
                     <p>¡Nos encantaría contar contigo en este día tan especial! Tu presencia hará de nuestra celebración un momento aún más inolvidable.</p>
                     <p>Por favor, confirma tu asistencia antes del 30 de Junio.</p>
-                    <!-- <div class="col-md-12">
-                        <a href="https://forms.gle/puqKnNjmiPcLbXSa8" class="btn btn-outline-success" style="margin-bottom: 1rem"
-                            ><i class="bi bi-list-check"></i> Completar formulario</a
-                        >
-                    </div> -->
                     <div class="col-md-12">
                         <p class="d-inline-flex gap-1">
                             <button
@@ -358,13 +353,12 @@
                                     <div class="container mt-1 mb-3">
                                         <div class="card p-4">
                                             <h2 class="text-center mb-3">Confirmación de Invitación</h2>
-                                            <label for="codigo" class="form-label">Ingresa tu código:</label>
+                                            <label id="codetitle" for="codigo" class="form-label">Ingresa tu código:</label>
                                             <div class="input-group mb-3">
-                                                <input type="number" id="codigo" class="form-control" placeholder="Ej.: 123456" />
-                                                <button class="btn btn-outline-success" onclick="validarCodigo()"><i class="bi bi-check-circle"></i> Comprobar</button>
+                                                <input type="number" id="codigo" class="form-control" placeholder="Ej.: 3456" />
+                                                <button class="btn btn-outline-success" id="btnValidate" onclick="validarCodigo()"><i class="bi bi-check-circle"></i> Comprobar</button>
                                             </div>
                                             <div id="infoInvitados" class="d-none">
-                                                <!-- <h4 class="text-center mb-3">Lista de Invitados</h4>-->
                                                 <div class="row" id="listaInvitados"></div>
                                             </div>
                                         </div>

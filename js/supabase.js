@@ -15,6 +15,9 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 async function validarCodigo() {
+    document.getElementById("codetitle").style.display = "none";
+    document.getElementById("codigo").style.display = "none";
+    document.getElementById("btnValidate").style.display = "none";
     let codigo = document.getElementById("codigo").value;
 
     if (!codigo) {
@@ -46,17 +49,17 @@ async function validarCodigo() {
     listaInvitados.innerHTML += `<h4 class="text-center mb-3">Lista de Invitados</h4>`;
     listaInvitados.innerHTML += `<p class="text-center">Invitación válida para ${amountGuest} persona(s)</p>`;
 
-    let guestNameClean = guestName.replace(/ y Flia/i, "").trim();
-
     for (let i = 0; i < amountGuest; i++) {
+        let invitado = data[i] || { id: null, guest: "" };
+        let nombreInvitado = invitado.guest.replace(/ y flia/i, "").trim();
+
         let div = document.createElement("div");
         div.classList.add("mb-3", "p-3", "col-sm-4");
-        
-        let nombreInvitado = (i === 0) ? guestNameClean : "";
-        
+        div.setAttribute("data-idguest", invitado.id || `nuevo-${i}`);
+
         div.innerHTML = `
             <label class="form-label"><b>• Invitado N°${i + 1}:</b></label>
-            <input type="text" class="form-control mb-2" value="${nombreInvitado}" placeholder="Nombre del invitado ${i + 1}" required>
+            <input type="text" class="form-control mb-2" value="${nombreInvitado}" placeholder="Nombre del invitado">
 
             <h6>¿Asistirá?</h6>
             <div class="d-inline-block text-start">
@@ -70,6 +73,8 @@ async function validarCodigo() {
                 </div>
             </div>
         `;
+
+        console.log("Div agregado con data-idguest:", div);
 
         listaInvitados.appendChild(div);
     }
@@ -87,7 +92,8 @@ async function validarCodigo() {
 
 
 async function enviarConfirmacion() {
-    let listaInvitados = document.getElementById("listaInvitados").children;
+    let listaInvitados = document.querySelectorAll("#listaInvitados > div[data-idguest]");
+    console.log("Invitados detectados:", listaInvitados.length);
     let confirmaciones = [];
     let privateCode = document.getElementById("codigo").value;
 
@@ -112,12 +118,22 @@ async function enviarConfirmacion() {
             guestName = "Null";
         }
 
-        confirmaciones.push({
+        /*confirmaciones.push({
             idguest: idGuest ? parseInt(idGuest) : null,
             guestname: guestName,
             privatecodeused: privateCode.trim(),
             confirmed: asistencia.value === "true",
-        });
+        });*/
+
+        let confirmacion = {
+            idguest: idGuest ? parseInt(idGuest) : null,
+            guestname: guestName,
+            privatecodeused: privateCode,
+            confirmed: asistencia.value === "true",
+        };
+
+        console.log("Datos a insertar:", confirmacion); // Verifica los datos antes de enviarlos
+        confirmaciones.push(confirmacion);
     }
 
     let { error: insertError } = await supabase.from("guestsconfirmed").insert(confirmaciones);
@@ -135,7 +151,7 @@ async function enviarConfirmacion() {
     }
 
     mostrarToast("¡Confirmación enviada con éxito!", "success");
-    setTimeout(() => location.reload(), 3000);
+    /*setTimeout(() => location.reload(), 3000);*/
 }
 
 function mostrarToast(mensaje, tipo) {
@@ -148,3 +164,24 @@ function mostrarToast(mensaje, tipo) {
     let toast = new bootstrap.Toast(toastElement);
     toast.show();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const inputCodigo = document.getElementById("codigo");
+    const codigo = getParameterByName("pc") || document.getElementById("codigo").value.trim();
+    
+    if (codigo) {
+        document.getElementById("codigo").value = codigo;
+        validarCodigo();
+    }
+
+    if (inputCodigo) {
+        inputCodigo.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                validarCodigo();
+            }
+        });
+    } else {
+        console.error('El input con id="codigo" no se encontró en el DOM.');
+    }
+});
