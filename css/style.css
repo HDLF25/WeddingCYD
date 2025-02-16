@@ -5,7 +5,8 @@ body {
     color: #243d3a;
 }
 .hero-section {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("../couplebg.jpg") no-repeat;
+    background: url("../couplebg2.png") no-repeat;
+    /*background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("../couplebg.jpg") no-repeat;*/
     background-size: cover;
     background-position: center;
     height: 80rem;
@@ -13,21 +14,25 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #243d3a;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 .hero-section h1 {
     font-family: "Parisienne";
     font-size: 9rem;
-    color: #243d3a;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 .hero-section p {
     font-family: "Playfair Display";
     font-size: 1.5rem;
-    color: #243d3a;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 .countdown {
     font-size: 2rem;
-    color: #2c2c2c;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* Imagen responsiva con bordes redondeados en pantallas grandes */
