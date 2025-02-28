@@ -10,6 +10,8 @@
         <script src="./js/countdown.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
         <link href="./css/bootstrap.min.css" rel="stylesheet" />
+        <script src="./js/music.js"></script>
+        <link href="./css/music.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,27 +71,27 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
-                                    <img src="https://placehold.co/600x600.png" alt="Pareja enamorada" />
+                                    <img src="pictures/photo1.jpeg" alt="Pareja enamorada" />
                                 </div>
                             </div>
                             <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
-                                    <img src="https://placehold.co/700x700.png" alt="Atardecer romántico" />
+                                    <img src="pictures/photo2.jpeg" alt="Atardecer romántico" />
                                 </div>
                             </div>
                             <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
-                                    <img src="https://placehold.co/800x800.png" alt="Paseo por el campo" />
+                                    <img src="pictures/photo3.jpeg" alt="Paseo por el campo" />
                                 </div>
                             </div>
                             <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
-                                    <img src="https://placehold.co/900x900.png" alt="Paseo por el campo" />
+                                    <img src="pictures/photo4.jpeg" alt="Paseo por el campo" />
                                 </div>
                             </div>
                             <div class="carousel-item" style="margin-top: 0.7rem; margin-bottom: 0.7rem">
                                 <div class="instant-photo">
-                                    <img src="https://placehold.co/1000x1000.png" alt="Paseo por el campo" />
+                                    <img src="pictures/photo5.jpeg" alt="Paseo por el campo" />
                                 </div>
                             </div>
                         </div>
@@ -124,7 +126,7 @@
                             <div class="col-md-12">
                                 <h4 class="mt-3"><b>Save the Date</b></h4>
                                 <div class="instant-photo mt-1 mb-3">
-                                    <img src="https://placehold.co/600x600.png" alt="Pareja enamorada" />
+                                    <img src="pictures/photo1.jpeg" alt="Pareja enamorada" />
                                 </div>
                                 <p>
                                     11 de Octubre de 2025, 4:00 PM<br />
@@ -141,7 +143,7 @@
                             <div class="col-md-6">
                                 <h4 class="mt-3"><b>Celebración</b></br></h4>
                                 <div class="instant-photo mt-1 mb-3">
-                                    <img src="https://placehold.co/600x600.png" alt="Pareja enamorada" />
+                                    <img src="pictures/iglesia.jpg" alt="Catedral de San Lorenzo" />
                                 </div>
                                 <p>
                                     Iglesia Catedral de San Lorenzo</br>
@@ -375,6 +377,16 @@
                 </div>
             </div>
         </section>
+
+        <!-- Audio oculto -->
+    <audio id="musicaFondo" loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón flotante -->
+    <button id="btnMusica" class="btn-musica text-center">
+        <i class="bi bi-play-fill"></i>
+    </button>
 
         <!-- Pie de Página -->
         <footer class="bg-dark text-light text-center py-3">
