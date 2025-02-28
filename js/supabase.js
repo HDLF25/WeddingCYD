@@ -110,12 +110,23 @@ async function validarCodigo() {
 
 async function enviarConfirmacion() {
     let listaInvitados = document.querySelectorAll("#listaInvitados > div[data-idguest]");
-    console.log("Invitados detectados:", listaInvitados.length);
     let confirmaciones = [];
     let privateCode = document.getElementById("codigo").value;
 
+    if (listaInvitados.length === 0) {
+        mostrarToast("No hay invitados para confirmar.", "danger");
+        return;
+    }
+    
+    // ✅ Recuperamos el mismo ID para todos los invitados
+    let idGuestPrincipal = listaInvitados[0].getAttribute("data-idguest");
+    if (!idGuestPrincipal) {
+        mostrarToast("Error al obtener el ID del invitado principal.", "danger");
+        return;
+    }
+    idGuestPrincipal = parseInt(idGuestPrincipal);
+
     for (let invitado of listaInvitados) {
-        let idGuest = invitado.getAttribute("data-idguest") || null;
         let guestNameInput = invitado.querySelector("input[type='text']");
         let asistencia = invitado.querySelector("input[type=radio]:checked");
 
@@ -124,7 +135,7 @@ async function enviarConfirmacion() {
             return;
         }
 
-        let guestName = guestNameInput ? guestNameInput.value.trim() : "";
+        let guestName = guestNameInput ? guestNameInput.value.trim() : "Invitado";
 
         if (asistencia.value === "true" && guestName === "") {
             mostrarToast("El nombre del invitado no puede estar vacío si asistirá.", "danger");
@@ -135,21 +146,14 @@ async function enviarConfirmacion() {
             guestName = "Null";
         }
 
-        /*confirmaciones.push({
-            idguest: idGuest ? parseInt(idGuest) : null,
-            guestname: guestName,
-            privatecodeused: privateCode.trim(),
-            confirmed: asistencia.value === "true",
-        });*/
-
         let confirmacion = {
-            idguest: idGuest ? parseInt(idGuest) : null,
+            idguest: idGuestPrincipal,
             guestname: guestName,
             privatecodeused: privateCode,
             confirmed: asistencia.value === "true",
         };
 
-        console.log("Datos a insertar:", confirmacion); // Verifica los datos antes de enviarlos
+        console.log("Datos a insertar:", confirmacion);
         confirmaciones.push(confirmacion);
     }
 
@@ -166,9 +170,8 @@ async function enviarConfirmacion() {
         mostrarToast("Error al actualizar la asistencia.", "danger");
         return;
     }
-
+    validarCodigo();
     mostrarToast("¡Confirmación enviada con éxito!", "success");
-    /*setTimeout(() => location.reload(), 3000);*/
 }
 
 function mostrarToast(mensaje, tipo) {
