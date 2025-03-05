@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let boton = document.getElementById("btnMusica");
 
     // Intentar reproducir la música automáticamente
-    let playPromise = musica.play();
+    /* let playPromise = musica.play();
 
     if (playPromise !== undefined) {
         playPromise
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Fallo: El navegador bloqueó el autoplay, mostrar botón
                 console.warn("El navegador bloqueó el autoplay. Esperando interacción del usuario.");
             });
-    }
+    } */
 
     boton.addEventListener("click", function () {
         if (musica.paused) {

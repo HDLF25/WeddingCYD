@@ -6,7 +6,6 @@ body {
 }
 .hero-section {
     background: url("../couplebg2.png") no-repeat;
-    /*background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1) 100%), url("../couplebg.jpg") no-repeat;*/
     background-size: cover;
     background-position: center;
     height: 80rem;
@@ -124,6 +123,34 @@ iframe {
 .instant-photo img {
     max-width: 100%;
     border-bottom: 8px solid #fff;
+}
+
+.instant-photo-nopad {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    /*width: 80%;*/
+    width: 22rem;
+}
+
+.instant-photo-nopad img {
+    max-width: 100%;
+    border-bottom: 8px solid #fff;
+}
+
+.instant-photo-text25 {
+    font-family: 'Indie Flower';
+    height: 25px;
+    margin-bottom: 1rem !important;
+}
+
+.instant-photo-text50 {
+    font-family: 'Indie Flower';
+    height: 50px;
+    margin-bottom: 1rem !important;
 }
 
 .carousel-indicators [data-bs-target] {
