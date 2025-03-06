@@ -78,7 +78,7 @@
     height: var(--bsb-tl-circle-size);
     left: calc(var(--bsb-tl-circle-offset) * -1);
     position: absolute;
-    top: calc(50% - var(--bsb-tl-circle-offset));
+    top: calc(48% - var(--bsb-tl-circle-offset));
     width: var(--bsb-tl-circle-size);
     z-index: 1;
 }

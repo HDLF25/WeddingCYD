@@ -28,8 +28,12 @@ async function validarCodigo() {
 
     let { data, error } = await supabase.from("guests").select("id, guest, amountguest, isconfirmed").eq("privatecode", codigo);
 
+    let listaInvitados = document.getElementById("listaInvitados");
+
     if (error || !data || data.length === 0) {
-        alert("Código no válido.");
+        /* alert("Código no válido."); */
+        listaInvitados.innerHTML = `<h3 class="text-danger text-center">Código no válido.</h3>`;
+        document.getElementById("infoInvitados").classList.remove("d-none");
         return;
     }
 
@@ -37,7 +41,7 @@ async function validarCodigo() {
     let guestName = data[0].guest;
     let amountGuest = data[0].amountguest;
 
-    let listaInvitados = document.getElementById("listaInvitados");
+    
     listaInvitados.innerHTML = "";
 
     if (isConfirmed) {
@@ -79,7 +83,6 @@ async function validarCodigo() {
 
         listaInvitados.appendChild(div);
 
-        // 🎯 Lógica para manejar el comportamiento del input
         let nombreInput = div.querySelector(".nombre-invitado");
         let radios = div.querySelectorAll(".asistencia-radio");
 
@@ -117,7 +120,7 @@ async function enviarConfirmacion() {
         mostrarToast("No hay invitados para confirmar.", "danger");
         return;
     }
-    
+
     // ✅ Recuperamos el mismo ID para todos los invitados
     let idGuestPrincipal = listaInvitados[0].getAttribute("data-idguest");
     if (!idGuestPrincipal) {
