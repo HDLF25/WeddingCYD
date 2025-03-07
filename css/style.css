@@ -34,25 +34,22 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Imagen responsiva con bordes redondeados en pantallas grandes */
 .hero-image {
     width: auto;
     max-width: 100%;
     height: auto;
-    border-radius: 1rem; /* Bordes redondeados por defecto */
+    border-radius: 1rem;
 }
 
-/* Imagen en pantallas pequeñas (sin bordes redondeados) */
 @media (max-width: 768px) {
     .hero-image {
-    border-radius: 0; /* Sin bordes redondeados */
-    width: 100%; /* Imagen ocupa todo el ancho */
+    border-radius: 0;
+    width: 100%;
     }
 }
 
-/* Altura personalizada para la sección de bienvenida */
 .hero-section {
-    min-height: calc(100vh - 70px); /* Altura ajustada al viewport menos el navbar */
+    min-height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,14 +58,12 @@ body {
     padding: 2rem 1rem;
 }
 
-/* Imagen responsive */
 img,
 iframe {
     max-width: 100%;
     height: auto;
 }
 
-/* Media Queries para pantallas más pequeñas */
 @media (max-width: 992px) {
     .hero-section h1 {
         font-size: 6rem;

@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const SUPABASE_URL = "https://kdbcaksimnsuflcpcnps.supabase.co";
-const SUPABASE_ANON_KEY =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkYmNha3NpbW5zdWZsY3BjbnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3MTU5OTAsImV4cCI6MjA1NDI5MTk5MH0.nicW59e5cZh-Vq8IN-DwIOpskwKg_FAlAeCiiyjmBeA";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkYmNha3NpbW5zdWZsY3BjbnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3MTU5OTAsImV4cCI6MjA1NDI5MTk5MH0.nicW59e5cZh-Vq8IN-DwIOpskwKg_FAlAeCiiyjmBeA";
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 async function validarCodigo() {
@@ -31,7 +30,6 @@ async function validarCodigo() {
     let listaInvitados = document.getElementById("listaInvitados");
 
     if (error || !data || data.length === 0) {
-        /* alert("Código no válido."); */
         listaInvitados.innerHTML = `<h3 class="text-danger text-center">Código no válido.</h3>`;
         document.getElementById("infoInvitados").classList.remove("d-none");
         return;
@@ -41,7 +39,6 @@ async function validarCodigo() {
     let guestName = data[0].guest;
     let amountGuest = data[0].amountguest;
 
-    
     listaInvitados.innerHTML = "";
 
     if (isConfirmed) {
