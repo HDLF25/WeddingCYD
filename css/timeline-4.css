@@ -48,7 +48,6 @@
     position: relative;
 }
 .bsb-timeline-4 .timeline:after {
-    /* background-color: var(--bsb-tl-color); */
     background-image: linear-gradient(#f1f1f1, black, black, #f1f1f1);
     bottom: 0;
     content: "";
@@ -70,8 +69,6 @@
 }
 .bsb-timeline-4 .timeline > .timeline-item:after {
     background: #f1f1f1;
-    /* background: var(--bsb-tl-circle-color); */
-    /* border: var(--bsb-tl-circle-border-size) solid var(--bsb-tl-circle-border-color); */
     border: 2px black solid;
     border-radius: 50%;
     content: "";
@@ -90,6 +87,9 @@
 .bsb-timeline-4 .timeline > .timeline-item .timeline-meta {
     padding: 1rem 0 1rem 2.5rem;
 }
+.bsb-timeline-4 .timeline > .timeline-item .timeline-meta2 {
+    padding: 1rem 0 1rem 2.5rem;
+}
 .bsb-timeline-4 .timeline > .timeline-item .timeline-content {
     padding: 0 0 1rem 2.5rem;
     position: relative;
@@ -102,6 +102,13 @@
         margin-bottom: 0;
         position: absolute;
         top: calc(50% - 17px);
+        width: 100%;
+        z-index: 1;
+    }
+    .bsb-timeline-4 .timeline > .timeline-item .timeline-meta2 {
+        margin-bottom: 0;
+        position: absolute;
+        top: calc(50% - 50px);
         width: 100%;
         z-index: 1;
     }
@@ -133,6 +140,10 @@
         padding: 0 0 0 2.5rem;
         right: -100%;
     }
+    .bsb-timeline-4 .timeline > .timeline-item.left .timeline-meta2 {
+        padding: 0 0 0 2.5rem;
+        right: -100%;
+    }
     .bsb-timeline-4 .timeline > .timeline-item.left .timeline-indicator:after {
         border-width: 1px;
         border: 10px solid var(--bsb-tl-indicator-color);
@@ -150,6 +161,12 @@
         left: -100%;
         padding: 0 2.5rem 0 0;
     }
+    .bsb-timeline-4 .timeline > .timeline-item.right .timeline-meta2 {
+        display: flex;
+        justify-content: flex-end;
+        left: -100%;
+        padding: 0 2.5rem 0 0;
+    }
 }
 
 .timeline-item h2 {
@@ -158,10 +175,19 @@
 
 .timeline-content p {
     text-align: justify;
+    
 }
 
 @media (min-width: 768px) {
     .timeline-item.left h2 {
         text-align: right;
     }
+    #CronoHour {
+        text-align: right;
+        margin-bottom: 0;
+    }
+}
+
+#CronoHour {
+    margin-bottom: 0;
 }

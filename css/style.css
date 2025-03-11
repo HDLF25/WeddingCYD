@@ -127,7 +127,6 @@ iframe {
     border-radius: 5px;
     text-align: center;
     margin: 0 auto;
-    /*width: 80%;*/
     width: 22rem;
 }
 
@@ -136,16 +135,10 @@ iframe {
     border-bottom: 8px solid #fff;
 }
 
-.instant-photo-text25 {
+.instant-photo-text {
+    height: 7vh !important;
     font-family: 'Indie Flower';
-    height: 25px;
-    margin-bottom: 1rem !important;
-}
-
-.instant-photo-text50 {
-    font-family: 'Indie Flower';
-    height: 50px;
-    margin-bottom: 1rem !important;
+    font-size: 1.2rem;
 }
 
 .carousel-indicators [data-bs-target] {
