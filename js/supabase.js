@@ -47,7 +47,7 @@ async function validarCodigo() {
         return;
     }
 
-    listaInvitados.innerHTML = `<h3 class="text-center"><b>Bienvenido,<br>${guestName}</b></h3>`;
+    listaInvitados.innerHTML = `<h3 class="text-center"><b>Bienvenido/a,<br>${guestName}</b></h3>`;
     listaInvitados.innerHTML += `<h4 class="text-center mb-3">Lista de Invitados</h4>`;
     listaInvitados.innerHTML += `<p class="text-center">Invitación válida para ${amountGuest} persona(s)</p>`;
 
@@ -118,7 +118,6 @@ async function enviarConfirmacion() {
         return;
     }
 
-    // ✅ Recuperamos el mismo ID para todos los invitados
     let idGuestPrincipal = listaInvitados[0].getAttribute("data-idguest");
     if (!idGuestPrincipal) {
         mostrarToast("Error al obtener el ID del invitado principal.", "danger");
