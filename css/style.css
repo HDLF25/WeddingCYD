@@ -5,7 +5,7 @@ body {
     color: #243d3a;
 }
 .hero-section {
-    background: url("../couplebg2.png") no-repeat;
+    background: url("../couplebg3.png") no-repeat;
     background-size: cover;
     background-position: center;
     height: 80rem;
@@ -137,8 +137,8 @@ iframe {
 
 .instant-photo-text {
     height: 7vh !important;
-    font-family: 'Indie Flower';
-    font-size: 1.2rem;
+    font-family: 'Playpen Sans';
+    font-size: 1.1rem;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -172,4 +172,10 @@ iframe {
     margin-bottom: 20px;
     font-size: 40px;
     color: #2E4235;
+}
+
+@media (max-width: 576px) {
+    .last-image {
+        margin-bottom: -39px;
+    }
 }

@@ -1,5 +1,5 @@
 // Fecha de la boda (Ajusta esta fecha con la de tu evento)
-var weddingDate = new Date("Oct 18, 2025 16:00:00").getTime();
+var weddingDate = new Date("Oct 11, 2025 17:00:00").getTime();
 
 // Actualiza la cuenta regresiva cada 1 segundo
 var countdown = setInterval(function() {
