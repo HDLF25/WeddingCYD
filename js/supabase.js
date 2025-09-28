@@ -25,7 +25,7 @@ async function validarCodigo() {
         return;
     }
 
-    let { data, error } = await supabase.from("guests").select("id, guest, amountguest, isconfirmed").eq("privatecode", codigo);
+    let { data, error } = await supabase.from("guests").select("id, guest, amountguest, isconfirmed").eq("privatecode", codigo).order("id", {ascending: true});
 
     let listaInvitados = document.getElementById("listaInvitados");
 
